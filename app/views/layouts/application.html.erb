@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= content_for(:title) || "Ro" %></title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= yield :head %>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/icon.png" type="image/png">
+    <link rel="icon" href="/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/icon.png">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <%= stylesheet_link_tag "main" %>
+		<noscript> <%= stylesheet_link_tag "noscript" %></noscript>
+  </head>
+
+  <body>
+
+		<!-- Main -->
+		<div id="main">
+			<!-- Header -->
+			<header id="header">
+				<h1> <a><%= link_to "SPACE", welcome_index_path %></a> </h1>
+				<h1> <a><%= link_to "UNIVERSE", view_open_path %></a> </h1>
+				<p>Just another fine responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+                <ul class="icons">
+					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+                </ul>
+            </header>
+
+            <%= yield %>
+
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a>.</li>
+				</ul>
+			</footer>
+
+		</div>
+
+        <!-- Scripts -->
+		<%= javascript_include_tag "jquery.min" %>
+		<%= javascript_include_tag "browser.min" %>
+		<%= javascript_include_tag "breakpoints.min" %>
+		<%= javascript_include_tag "main" %>
+
+  </body>
+</html>
